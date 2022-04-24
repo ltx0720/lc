@@ -1,5 +1,7 @@
 package week01;
 
+import common.ListNode;
+
 public class T21 {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
