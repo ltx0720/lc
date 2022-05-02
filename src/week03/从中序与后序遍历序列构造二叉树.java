@@ -4,7 +4,7 @@ import common.TreeNode;
 
 public class 从中序与后序遍历序列构造二叉树 {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        return doBuildTree(inorder, 0, inorder.length-1, postorder, 0, postorder.length-1);
+        return doBuildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
     }
 
     private TreeNode doBuildTree(int[] inorder, int inStart, int inEnd, int[] postorder, int postStart, int postEnd) {
@@ -21,7 +21,7 @@ public class 从中序与后序遍历序列构造二叉树 {
 
         // 在中序数组中找root
         int rootIndexIn = -1;
-        for (int i=inStart; i<=inEnd; i++) {
+        for (int i = inStart; i <= inEnd; i++) {
             if (inorder[i] == postorder[postEnd]) {
                 rootIndexIn = i;
                 break;
@@ -34,10 +34,9 @@ public class 从中序与后序遍历序列构造二叉树 {
         int nextLeftEnd = postStart + ln - 1;
 
         // 无左子树, 可能 rootIndexIn-1 < 0, 需要特殊处理
-        root.left = doBuildTree(inorder, inStart, rootIndexIn-1, postorder, postStart, nextLeftEnd);
-
+        root.left = doBuildTree(inorder, inStart, rootIndexIn - 1, postorder, postStart, nextLeftEnd);
         // 如果没有右子树, rootIndexIn是最后一个则rootIndexIn+1 会溢出, 在开头需要特殊处理
-        root.right = doBuildTree(inorder, rootIndexIn+1, inEnd, postorder, nextLeftEnd+1, postEnd-1);
+        root.right = doBuildTree(inorder, rootIndexIn + 1, inEnd, postorder, nextLeftEnd + 1, postEnd - 1);
 
         return root;
     }

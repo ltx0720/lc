@@ -1,4 +1,5 @@
 package week03;
+
 import common.Node;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class N叉树的层序遍历 {
         while (list.size() != 0) {
             int size = list.size();
             List<Integer> sonList = new ArrayList<>();
-            for (int i=0; i<size; i++) {
+            for (int i = 0; i < size; i++) {
                 Node head = list.removeFirst();
                 sonList.add(head.val);
                 list.addAll(head.children);
