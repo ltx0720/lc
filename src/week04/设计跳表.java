@@ -120,7 +120,6 @@ class 设计跳表 {
         return null;
     }
 
-
     public static void main(String[] args) {
 //        Skiplist skiplist = new Skiplist();
 //        skiplist.add(1);
@@ -149,7 +148,6 @@ class 设计跳表 {
         skiplist.add(5);
         boolean erase2 = skiplist.erase(6);
     }
-
 }
 
 class Node {
