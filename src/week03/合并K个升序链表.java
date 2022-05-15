@@ -118,6 +118,7 @@ public class 合并K个升序链表 {
         ListNode listNode = t.mergeKLists(new ListNode[]{ka1, ka2, ka3, ka4});
         System.out.println(listNode);
 
+
     }
 
 }
